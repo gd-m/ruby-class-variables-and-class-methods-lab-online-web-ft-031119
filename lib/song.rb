@@ -19,19 +19,22 @@ class Song
   def self.count
     @@count
   end
+  def self.genre
+    @@genre.uniq
+  end
 
   def self.genre_count(@@genre)
     genres_hash = {}
     @@genre.each do |name|
       while i < @@genre.length
-        if genres_hash[name] == name
+        if genres_hash[name]
           genres[name] += 1
         else
           genres_hash[name] = 1
         end
       end
+      genres_hash
     end
-    genres_hash
   end
 
 end
