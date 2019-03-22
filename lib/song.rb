@@ -24,15 +24,7 @@ class Song
   end
 
   def self.genre_count
-    genres_hash = {}
-    @@genre.each do |name|
-        if genres_hash[name]
-          genres_hash[name] += 1
-        else
-          genres_hash[name] = 1
-        end
-      end
-      genres_hash
-  end
+   @@genres.inject(Hash.new(0)) { |total, i| total[i] += 1 ;total}
+ end 
 
 end
